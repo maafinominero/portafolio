@@ -11,23 +11,33 @@
       font-family: 'Lato', sans-serif;
     }
   </style>
+
+<script>
+    function f_u(){
+        window.location = document.getElementById("single").value;
+        return false;
+    }
+</script>
+
 </head>
 
 <body>
   
-<h1>MAAFINQRCode</h1>
+<h1>LECTOR QR</h1>
 
 <form>
   
-  <label for="single">Escanee para buscar usuario en el sistema</label> 
+  <label for="single">Escanee para buscar el item en el sistema</label> 
   <input id="single" type="text" size="50"> 
   <button type="button" class="qrcode-reader" id="openreader-single" 
     data-qrr-target="#single" 
     data-qrr-audio-feedback="false" 
-    data-qrr-qrcode-regexp="^https?:\/\/">Lector de QR</button>
+    data-qrr-qrcode-regexp="^https?:\/\/"><img src="i/qr-code.png" width="128px" height="128px">
+</form></button>
+
+
+  <div>PARA PRUEBAS ESCANEE EL SIGUIENTE QR</div>
   
-  
-</form>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -64,6 +74,11 @@
 
 
   });
+$("#single").on("propertychange focus change click keyup input paste blur", function(){
+        window.location = document.getElementById("single").value;
+        return false;
+})
+
 
 </script>
 
